@@ -1,4 +1,5 @@
 .header
+    color: #424242
     &--absolute
         top: 0
         left: 0
@@ -7,6 +8,12 @@
         z-index: 2
     &--white
         color: #fff
+        .header__nav-link
+            color: #ffffff
+        .header__lang-link--active
+            color: #ffffff
+        .header__phone-link
+            color: #ffffff
     &__inner
         display: flex
         justify-content: space-between
@@ -28,7 +35,7 @@
         @media (max-width: 1199px)
             display: none
         &-link
-            color: #ffffff
+            color: #424242
             margin-right: 50px
             @media (max-width: 1749px)
                 margin-right: 24px
@@ -42,12 +49,12 @@
             color: #898989
             font-family: "Chalet-1960", Arial, sans-serif
             &--active
-                color: #ffffff
+                color: #424242
     &__phone
         @media (max-width: 767px)
             display: none
         &-link
-            color: #ffffff
+            color: #424242
             font-family: "Chalet-1960", Arial, sans-serif
             letter-spacing: 0.05em
     &__burger
@@ -878,7 +885,112 @@ ul li
     &__developer
         color: #ffffff
 
+.partners-page
+    padding-bottom: 95px
+    @media (max-width: 767px)
+        padding-bottom: 45px
+    &__flex
+        display: flex
+        flex-wrap: wrap
+    &__partner
+        width: calc((100% - 40px)/3)
+        margin-right: 20px
+        margin-bottom: 20px
+        background-color: #fff
+        padding: 95px 50px
+        display: flex
+        @media (max-width: 1749px)
+            padding: 80px 30px
+        @media (max-width: 1439px)
+            width: calc((100% - 20px)/2)
+        @media (max-width: 1024px)
+            width: 100%
+            margin-right: 0
+            justify-content: center
+        @media (max-width: 575px)
+            flex-direction: column
+            align-items: center
+        &:nth-child(3n + 3)
+            margin-right: 0
+            @media (max-width: 1439px)
+                margin-right: 20px
+            @media (max-width: 1024px)
+                margin-right: 0
+        &:nth-child(2n + 2)
+            @media (max-width: 1439px)
+                margin-right: 0
+        &-pic
+            display: flex
+            align-items: center
+            @media (max-width: 575px)
+                justify-content: center
+        &-info
+            padding-left: 55px
+            @media (max-width: 575px)
+                text-align: center
+                padding-left: 0
+        &-category
+            font-size: 14px
+            letter-spacing: -0.015em
+            padding-bottom: 16px
+            color: #999999
+        &-title
+            font-family: 'Chalet-1960', Arial, sans-serif
+            font-size: 34px
+            letter-spacing: -0.015em
+            padding-bottom: 10px
+            @media (max-width: 575px)
+                font-size: 28px
+        &-about
+            font-family: 'Chalet-1960', Arial, sans-serif
+            font-size: 14px
+            letter-spacing: -0.015em
 
+.articles-page
+    &__inner
+        display: flex
+        flex-wrap: wrap
+        padding-bottom: 100px
+    &__block
+        width: calc((100% - 20px)/3)
+        margin-right: 10px
+        margin-bottom: 10px
+        background-color: #fff
+        position: relative
+        .know-more
+            position: absolute
+            left: 70px
+            right: 70px
+            bottom: 40px
+        &:nth-child(3n + 3)
+            margin-right: 0
+        &--commercial
+            background-color: $rose
+            color: #ffffff
+            padding: 450px 70px 10px
+            .know-link
+                color: #ffffff
+        &-title
+            font-family: 'Chalet-1960', Arial, sans-serif
+            font-size: 34px
+            letter-spacing: -0.015em
+    .articles
+        &__item
+            position: static
+            &-pic
+                height: 100%
+                background-repeat: no-repeat
+                background-position: 50% 50%
+                background-size: cover
+                &-wrapper
+                    height: 470px
+                    overflow: hidden
+            &-text
+                padding: 80px 70px 0
+        &__date
+            padding-bottom: 28px
+        &__title
+            padding-bottom: 70px
 
             
 

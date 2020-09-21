@@ -280,9 +280,10 @@ input[type="radio"]:checked + label:after {
   transform: translateX(-100%); }
 
 .h1 {
-  font-family: "Magistral-Book", Arial, sans-serif;
-  font-size: 32px;
-  letter-spacing: 0.1em;
+  font-family: "Chalet-1980", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 75px;
+  letter-spacing: -0.015em;
   margin: 0;
   font-weight: 400; }
   @media (max-width: 767px) {
@@ -353,21 +354,10 @@ input[type="radio"]:checked + label:after {
   letter-spacing: 0.07em; }
 
 .page-title {
-  padding: 75px 0 65px; }
+  padding: 50px 0 75px; }
   @media (max-width: 767px) {
     .page-title {
       padding: 20px 0; } }
-  .page-title__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-    @media (max-width: 767px) {
-      .page-title__inner {
-        flex-direction: column;
-        align-items: flex-start; } }
-  .page-title__left {
-    display: flex;
-    align-items: flex-end; }
 
 .btn {
   display: inline-block;
@@ -431,70 +421,78 @@ input[type="radio"]:checked + label:after {
 .animated-line {
   animation: animated-line 1s ease-out 1s 1 forwards; }
 
-.header--absolute {
-  top: 0;
-  left: 0;
-  right: 0;
-  position: absolute;
-  z-index: 2; }
-.header--white {
-  color: #fff; }
-.header__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 0 20px; }
-.header__block {
-  display: flex;
-  align-items: center; }
-.header__logo {
-  margin-right: 140px; }
-  @media (max-width: 1749px) {
-    .header__logo {
-      margin-right: 60px; } }
-  @media (max-width: 767px) {
-    .header__logo {
-      width: 119px;
-      height: 55px;
-      object-fit: contain;
-      margin-right: 20px; } }
-@media (max-width: 1199px) {
-  .header__nav {
-    display: none; } }
-.header__nav-link {
-  color: #ffffff;
-  margin-right: 50px; }
-  @media (max-width: 1749px) {
-    .header__nav-link {
-      margin-right: 24px; } }
-  .header__nav-link:last-child {
-    margin-right: 0; }
-.header__lang {
-  margin-right: 55px; }
-  @media (max-width: 767px) {
-    .header__lang {
-      margin-right: 20px; } }
-  .header__lang-link {
-    color: #898989;
-    font-family: "Chalet-1960", Arial, sans-serif; }
-    .header__lang-link--active {
+.header {
+  color: #424242; }
+  .header--absolute {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: 2; }
+  .header--white {
+    color: #fff; }
+    .header--white .header__nav-link {
       color: #ffffff; }
-@media (max-width: 767px) {
-  .header__phone {
-    display: none; } }
-.header__phone-link {
-  color: #ffffff;
-  font-family: "Chalet-1960", Arial, sans-serif;
-  letter-spacing: 0.05em; }
-.header__burger {
-  display: none;
-  margin-left: 32px; }
+    .header--white .header__lang-link--active {
+      color: #ffffff; }
+    .header--white .header__phone-link {
+      color: #ffffff; }
+  .header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0 20px; }
+  .header__block {
+    display: flex;
+    align-items: center; }
+  .header__logo {
+    margin-right: 140px; }
+    @media (max-width: 1749px) {
+      .header__logo {
+        margin-right: 60px; } }
+    @media (max-width: 767px) {
+      .header__logo {
+        width: 119px;
+        height: 55px;
+        object-fit: contain;
+        margin-right: 20px; } }
   @media (max-width: 1199px) {
-    .header__burger {
-      display: block; } }
+    .header__nav {
+      display: none; } }
+  .header__nav-link {
+    color: #424242;
+    margin-right: 50px; }
+    @media (max-width: 1749px) {
+      .header__nav-link {
+        margin-right: 24px; } }
+    .header__nav-link:last-child {
+      margin-right: 0; }
+  .header__lang {
+    margin-right: 55px; }
+    @media (max-width: 767px) {
+      .header__lang {
+        margin-right: 20px; } }
+    .header__lang-link {
+      color: #898989;
+      font-family: "Chalet-1960", Arial, sans-serif; }
+      .header__lang-link--active {
+        color: #424242; }
   @media (max-width: 767px) {
-    .header__burger {
-      margin-left: 0; } }
+    .header__phone {
+      display: none; } }
+  .header__phone-link {
+    color: #424242;
+    font-family: "Chalet-1960", Arial, sans-serif;
+    letter-spacing: 0.05em; }
+  .header__burger {
+    display: none;
+    margin-left: 32px; }
+    @media (max-width: 1199px) {
+      .header__burger {
+        display: block; } }
+    @media (max-width: 767px) {
+      .header__burger {
+        margin-left: 0; } }
 
 .main-slider__slide-inner {
   position: relative;
@@ -1385,5 +1383,120 @@ ul li {
         align-items: flex-start; } }
   .footer__developer {
     color: #ffffff; }
+
+.partners-page {
+  padding-bottom: 95px; }
+  @media (max-width: 767px) {
+    .partners-page {
+      padding-bottom: 45px; } }
+  .partners-page__flex {
+    display: flex;
+    flex-wrap: wrap; }
+  .partners-page__partner {
+    width: calc((100% - 40px)/3);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 95px 50px;
+    display: flex; }
+    @media (max-width: 1749px) {
+      .partners-page__partner {
+        padding: 80px 30px; } }
+    @media (max-width: 1439px) {
+      .partners-page__partner {
+        width: calc((100% - 20px)/2); } }
+    @media (max-width: 1024px) {
+      .partners-page__partner {
+        width: 100%;
+        margin-right: 0;
+        justify-content: center; } }
+    @media (max-width: 575px) {
+      .partners-page__partner {
+        flex-direction: column;
+        align-items: center; } }
+    .partners-page__partner:nth-child(3n + 3) {
+      margin-right: 0; }
+      @media (max-width: 1439px) {
+        .partners-page__partner:nth-child(3n + 3) {
+          margin-right: 20px; } }
+      @media (max-width: 1024px) {
+        .partners-page__partner:nth-child(3n + 3) {
+          margin-right: 0; } }
+    @media (max-width: 1439px) {
+      .partners-page__partner:nth-child(2n + 2) {
+        margin-right: 0; } }
+    .partners-page__partner-pic {
+      display: flex;
+      align-items: center; }
+      @media (max-width: 575px) {
+        .partners-page__partner-pic {
+          justify-content: center; } }
+    .partners-page__partner-info {
+      padding-left: 55px; }
+      @media (max-width: 575px) {
+        .partners-page__partner-info {
+          text-align: center;
+          padding-left: 0; } }
+    .partners-page__partner-category {
+      font-size: 14px;
+      letter-spacing: -0.015em;
+      padding-bottom: 16px;
+      color: #999999; }
+    .partners-page__partner-title {
+      font-family: "Chalet-1960", Arial, sans-serif;
+      font-size: 34px;
+      letter-spacing: -0.015em;
+      padding-bottom: 10px; }
+      @media (max-width: 575px) {
+        .partners-page__partner-title {
+          font-size: 28px; } }
+    .partners-page__partner-about {
+      font-family: "Chalet-1960", Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: -0.015em; }
+
+.articles-page__inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 100px; }
+.articles-page__block {
+  width: calc((100% - 20px)/3);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  position: relative; }
+  .articles-page__block .know-more {
+    position: absolute;
+    left: 70px;
+    right: 70px;
+    bottom: 40px; }
+  .articles-page__block:nth-child(3n + 3) {
+    margin-right: 0; }
+  .articles-page__block--commercial {
+    background-color: #cf5d66;
+    color: #ffffff;
+    padding: 450px 70px 10px; }
+    .articles-page__block--commercial .know-link {
+      color: #ffffff; }
+  .articles-page__block-title {
+    font-family: "Chalet-1960", Arial, sans-serif;
+    font-size: 34px;
+    letter-spacing: -0.015em; }
+.articles-page .articles__item {
+  position: static; }
+  .articles-page .articles__item-pic {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover; }
+    .articles-page .articles__item-pic-wrapper {
+      height: 470px;
+      overflow: hidden; }
+  .articles-page .articles__item-text {
+    padding: 80px 70px 0; }
+.articles-page .articles__date {
+  padding-bottom: 28px; }
+.articles-page .articles__title {
+  padding-bottom: 70px; }
 
 /*# sourceMappingURL=styles.css.map */
