@@ -254,6 +254,8 @@
     .h2
         max-width: 870px
         padding-bottom: 50px
+    .know-more
+        max-width: 565px
 
 .services 
     background-color: #fff
@@ -647,13 +649,12 @@ ul li
             align-items: center
             @media (max-width: 1024px)
                 width: 100%
-                padding: 50px
         &-pic
-            width: 691px
-            height: 654px
+            width: 100%
+            height: 100%
             background-repeat: no-repeat
             background-position: 50% 50%
-            background-size: contain
+            background-size: cover
             @media (max-width: 1024px)
                 width: 100%
                 height: 500px
@@ -679,8 +680,8 @@ ul li
         @media (max-width: 767px)
             max-width: none
     &__date
-        color: #b2b2b2
-        font-family: 'Chalet-1960', Arial, sans-serif
+        opacity: 0.3
+        font-family: 'Chalet-1920', Arial, sans-serif
         font-size: 24px
         letter-spacing: -0.015em
         padding-bottom: 90px
@@ -1008,31 +1009,56 @@ ul li
         display: flex
         flex-wrap: wrap
         padding-bottom: 100px
+        @media (max-width: 767px)
+            padding-bottom: 45px
     &__block
         width: calc((100% - 20px)/3)
         margin-right: 10px
         margin-bottom: 10px
         background-color: #fff
         position: relative
+        @media (max-width: 1024px)
+            width: calc((100% - 10px)/2)
+        @media (max-width: 767px)
+            width: 100%
+            margin-right: 0
+        &:nth-child(3n + 3)
+            margin-right: 0
+            @media (max-width: 1024px)
+                margin-right: 10px
+            @media (max-width: 767px)
+                margin-right: 0
+        &:nth-child(2n + 2)
+            @media (max-width: 1024px)
+                margin-right: 0
         .articles__date
             font-size: 24px
+            @media (max-width: 767px)
+                font-size: 16px
         .know-more
             position: absolute
             left: 70px
             right: 70px
             bottom: 40px
-        &:nth-child(3n + 3)
-            margin-right: 0
+            @media (max-width: 767px)
+                left: 20px
+                right: 20px
         &--commercial
             background-color: $rose
             color: #ffffff
             padding: 450px 70px 10px
+            @media (max-width: 767px)
+                padding: 100px 20px 150px
             .know-link
                 color: #ffffff
         &-title
             font-family: 'Chalet-1960', Arial, sans-serif
             font-size: 34px
             letter-spacing: -0.015em
+            @media (max-width: 1199px)
+                font-size: 28px
+            @media (max-width: 1024px)
+                font-size: 24px
     .articles
         &__item
             position: static
@@ -1044,12 +1070,51 @@ ul li
                 &-wrapper
                     height: 470px
                     overflow: hidden
+                    @media (max-width: 767px)
+                        height: 300px
             &-text
                 padding: 80px 70px 0
+                @media (max-width: 767px)
+                    padding: 45px 20px 0
         &__date
             padding-bottom: 28px
         &__title
             padding-bottom: 70px
+
+.portfolio
+    &__item
+        padding: 130px 70px 0
+        @media (max-width: 767px)
+            padding: 45px 20px 0
+        &-pic
+            height: 100%
+            background-repeat: no-repeat
+            background-position: 0 50%
+            background-size: contain
+            &-wrapper
+                height: 135px
+                margin-bottom: 165px
+                @media (max-width: 767px)
+                    margin-bottom: 45px
+                    height: 110px
+        &-name
+            font-family: 'Chalet-1960', Arial, sans-serif
+            font-size: 34px
+            letter-spacing: -0.015em
+            padding-bottom: 24px
+            @media (max-width: 1199px)
+                font-size: 28px
+            @media (max-width: 1024px)
+                font-size: 24px
+        &-info
+            max-width: 260px
+            font-family: 'Chalet-1960', Arial, sans-serif
+            font-size: 18px
+            line-height: 2
+            letter-spacing: -0.015em
+            padding-bottom: 175px
+            @media (max-width: 767px)
+                max-width: none
 
             
 

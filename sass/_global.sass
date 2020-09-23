@@ -385,6 +385,10 @@ input[type="radio"]:checked + label:after
     display: flex
     justify-content: center
     align-items: center
+    @media (max-width: 1199px)
+        padding-bottom: 80px
+    @media (max-width: 767px)
+        padding-bottom: 45px
     &__inner
         display: flex
         justify-content: center

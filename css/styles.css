@@ -10,6 +10,11 @@
   font-weight: normal;
   font-style: normal; }
 @font-face {
+  font-family: "Chalet-1920";
+  src: url("../fonts/Chalet-1920/Chalet-LondonNineteenSixty.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
   font-family: "Greenwich";
   src: url("../fonts/Greenwich-Medium/Greenwich-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Greenwich-Medium/Greenwich-Medium.woff") format("woff"), url("../fonts/Greenwich-Medium/Greenwich-Medium.ttf") format("truetype"), url("../fonts/Greenwich-Medium/Greenwich-Medium.svg#Greenwich-Medium") format("svg");
   font-weight: 500;
@@ -422,6 +427,12 @@ input[type="radio"]:checked + label:after {
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media (max-width: 1199px) {
+    .show-more {
+      padding-bottom: 80px; } }
+  @media (max-width: 767px) {
+    .show-more {
+      padding-bottom: 45px; } }
   .show-more__inner {
     display: flex;
     justify-content: center;
@@ -724,6 +735,8 @@ input[type="radio"]:checked + label:after {
   .about .h2 {
     max-width: 870px;
     padding-bottom: 50px; }
+  .about .know-more {
+    max-width: 565px; }
 
 .services {
   background-color: #fff;
@@ -1144,14 +1157,13 @@ ul li {
     align-items: center; }
     @media (max-width: 1024px) {
       .projects__project-img {
-        width: 100%;
-        padding: 50px; } }
+        width: 100%; } }
   .projects__project-pic {
-    width: 691px;
-    height: 654px;
+    width: 100%;
+    height: 100%;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-size: contain; }
+    background-size: cover; }
     @media (max-width: 1024px) {
       .projects__project-pic {
         width: 100%;
@@ -1184,8 +1196,8 @@ ul li {
       .articles__item {
         max-width: none; } }
   .articles__date {
-    color: #b2b2b2;
-    font-family: "Chalet-1960", Arial, sans-serif;
+    opacity: 0.3;
+    font-family: "Chalet-1920", Arial, sans-serif;
     font-size: 24px;
     letter-spacing: -0.015em;
     padding-bottom: 90px; }
@@ -1562,31 +1574,66 @@ ul li {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 100px; }
+  @media (max-width: 767px) {
+    .articles-page__inner {
+      padding-bottom: 45px; } }
 .articles-page__block {
   width: calc((100% - 20px)/3);
   margin-right: 10px;
   margin-bottom: 10px;
   background-color: #fff;
   position: relative; }
+  @media (max-width: 1024px) {
+    .articles-page__block {
+      width: calc((100% - 10px)/2); } }
+  @media (max-width: 767px) {
+    .articles-page__block {
+      width: 100%;
+      margin-right: 0; } }
+  .articles-page__block:nth-child(3n + 3) {
+    margin-right: 0; }
+    @media (max-width: 1024px) {
+      .articles-page__block:nth-child(3n + 3) {
+        margin-right: 10px; } }
+    @media (max-width: 767px) {
+      .articles-page__block:nth-child(3n + 3) {
+        margin-right: 0; } }
+  @media (max-width: 1024px) {
+    .articles-page__block:nth-child(2n + 2) {
+      margin-right: 0; } }
   .articles-page__block .articles__date {
     font-size: 24px; }
+    @media (max-width: 767px) {
+      .articles-page__block .articles__date {
+        font-size: 16px; } }
   .articles-page__block .know-more {
     position: absolute;
     left: 70px;
     right: 70px;
     bottom: 40px; }
-  .articles-page__block:nth-child(3n + 3) {
-    margin-right: 0; }
+    @media (max-width: 767px) {
+      .articles-page__block .know-more {
+        left: 20px;
+        right: 20px; } }
   .articles-page__block--commercial {
     background-color: #cf5d66;
     color: #ffffff;
     padding: 450px 70px 10px; }
+    @media (max-width: 767px) {
+      .articles-page__block--commercial {
+        padding: 100px 20px 150px; } }
     .articles-page__block--commercial .know-link {
       color: #ffffff; }
   .articles-page__block-title {
     font-family: "Chalet-1960", Arial, sans-serif;
     font-size: 34px;
     letter-spacing: -0.015em; }
+    @media (max-width: 1199px) {
+      .articles-page__block-title {
+        font-size: 28px; } }
+    @media (max-width: 1024px) {
+      .articles-page__block-title {
+        font-size: 24px; } }
 .articles-page .articles__item {
   position: static; }
   .articles-page .articles__item-pic {
@@ -1597,11 +1644,56 @@ ul li {
     .articles-page .articles__item-pic-wrapper {
       height: 470px;
       overflow: hidden; }
+      @media (max-width: 767px) {
+        .articles-page .articles__item-pic-wrapper {
+          height: 300px; } }
   .articles-page .articles__item-text {
     padding: 80px 70px 0; }
+    @media (max-width: 767px) {
+      .articles-page .articles__item-text {
+        padding: 45px 20px 0; } }
 .articles-page .articles__date {
   padding-bottom: 28px; }
 .articles-page .articles__title {
   padding-bottom: 70px; }
+
+.portfolio__item {
+  padding: 130px 70px 0; }
+  @media (max-width: 767px) {
+    .portfolio__item {
+      padding: 45px 20px 0; } }
+  .portfolio__item-pic {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: contain; }
+    .portfolio__item-pic-wrapper {
+      height: 135px;
+      margin-bottom: 165px; }
+      @media (max-width: 767px) {
+        .portfolio__item-pic-wrapper {
+          margin-bottom: 45px;
+          height: 110px; } }
+  .portfolio__item-name {
+    font-family: "Chalet-1960", Arial, sans-serif;
+    font-size: 34px;
+    letter-spacing: -0.015em;
+    padding-bottom: 24px; }
+    @media (max-width: 1199px) {
+      .portfolio__item-name {
+        font-size: 28px; } }
+    @media (max-width: 1024px) {
+      .portfolio__item-name {
+        font-size: 24px; } }
+  .portfolio__item-info {
+    max-width: 260px;
+    font-family: "Chalet-1960", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: -0.015em;
+    padding-bottom: 175px; }
+    @media (max-width: 767px) {
+      .portfolio__item-info {
+        max-width: none; } }
 
 /*# sourceMappingURL=styles.css.map */
