@@ -37,6 +37,7 @@
         &-link
             color: #424242
             margin-right: 50px
+            font-weight: 400
             @media (max-width: 1749px)
                 margin-right: 24px
             &:last-child
@@ -47,7 +48,7 @@
             margin-right: 20px
         &-link
             color: #898989
-            font-family: "Chalet-1960", Arial, sans-serif
+            font-weight: 400
             &--active
                 color: #424242
     &__phone
@@ -118,6 +119,10 @@
             white-space: nowrap
         &-link
             color: #ffffff
+            &:hover,
+            &:focus
+                color: #ffffff
+                letter-spacing: 0.03em
         &-line
             &-wrapper
                 width: 440px
@@ -133,6 +138,9 @@
         margin-left: 20px
 
 .know
+    &-link:hover,
+    &-link:focus
+        color: inherit
     &-more
         display: flex
         align-items: center
@@ -140,9 +148,19 @@
         &--rose
             .know-link
                 color: $rose
+                &:hover,
+                &:focus
+                    color: $rose
         &--flexible
             .line-wrapper
+                width: calc(100% - 150px)
+        &:hover,
+        &:focus
+            .know-link
+                letter-spacing: 0.03em
+            .line-wrapper
                 width: calc(100% - 130px)
+        
 
 .about
     position: relative
@@ -238,6 +256,7 @@
         padding-bottom: 50px
 
 .services 
+    background-color: #fff
     margin: 0px
     height: 900px
     overflow: hidden
@@ -301,13 +320,13 @@
     display: inline-block
     white-space: nowrap
     font-size: 0
+    z-index: 5
     @media (max-width: 767px)
         white-space: normal
         width: 100%
 
 ul li 
     vertical-align: top
-
 
 .services .rows .cols .show_img li 
     position: relative
@@ -337,12 +356,12 @@ ul li
     display: flex
     align-items: center
     justify-content: space-between
-    transform: rotate(-90deg) translateY(-550px)
+    transform: rotate(-90deg) translateY(-500px)
     transform-origin: 100% 100%
     transition: all 0.3s ease 0s
     position: absolute
     top: 40px
-    width: 750px
+    width: 650px
     @media (max-width: 1199px)
         width: 540px
         transform: rotate(-90deg) translateY(-350px)
@@ -354,7 +373,7 @@ ul li
 
 .services .rows .cols .show_img li .slk:hover .txt 
     transition: all 0.3s ease 0s
-    transform: rotate(-90deg) translateY(-580px)
+    transform: rotate(-90deg) translateY(-530px)
     @media (max-width: 1199px)
         transform: rotate(-90deg) translateY(-380px)
     @media (max-width: 767px)
@@ -379,7 +398,7 @@ ul li
 
 
 .services .rows .cols .show_img li .txt.txt01 .h3 
-    margin: 0px 0px 0px 40px
+    margin: 0
     @media (max-width: 767px)
         margin-left: 15px
 
@@ -517,7 +536,7 @@ ul li
                 left: -15px
     &__partner
         background-color: #fff
-        padding: 125px 75px 36px
+        padding: 130px 75px 40px
         margin-right: 24px
         width: 38%
         @media (max-width: 1439px)
@@ -559,6 +578,7 @@ ul li
             letter-spacing: -0.015em
             line-height: 1.4
             padding-bottom: 100px
+            max-width: 320px
             @media (max-width: 1749px)
                 font-size: 28px
             @media (max-width: 1439px)
@@ -566,10 +586,6 @@ ul li
                 font-size: 24px
         .know-link
             color: $rose
-    .line-wrapper
-        width: 200px
-        @media (max-width: 1199px)
-            width: calc(100% - 130px)
 
 .projects
     &__best
@@ -686,6 +702,9 @@ ul li
         bottom: 5px
     .know-link
         color: $rose
+        &:hover,
+        &:focus
+            color: $rose
 
 .partners
     padding-bottom: 205px
@@ -713,15 +732,49 @@ ul li
             width: 100%
     &__logo
         width: 180px
+        object-fit: contain
         height: 140px
-        background-repeat: no-repeat
-        background-position: 50% 50%
-        background-size: contain
+        margin-right: calc((100% - 900px)/4)
+        margin-bottom: 60px
+        &:nth-child(5n + 5)
+            margin-right: 0
+            @media (max-width: 1199px)
+                margin-right: calc((100% - 720px)/3)
+            @media (max-width: 1024px)
+                margin-right: calc((100% - 540px)/2)
+            @media (max-width: 767px)
+                margin-right: calc(100% - 360px)
+            @media (max-width: 500px)
+                margin-right: auto
+        &:nth-child(4n + 4)
+            @media (max-width: 1199px)
+                margin-right: 0
+            @media (max-width: 1024px)
+                margin-right: calc((100% - 540px)/2)
+            @media (max-width: 767px)
+                margin-right: calc(100% - 360px)
+            @media (max-width: 500px)
+                margin-right: auto
+        &:nth-child(3n + 3)
+            @media (max-width: 1024px)
+                margin-right: 0
+            @media (max-width: 767px)
+                margin-right: calc(100% - 360px)
+            @media (max-width: 500px)
+                margin-right: auto
+        &:nth-child(2n + 2)
+            @media (max-width: 767px)
+                margin-right: auto
+        @media (max-width: 1199px)
+            margin-right: calc((100% - 720px)/3)
         @media (max-width: 1024px)
-            margin: 0 auto
-        @media (max-width: 575px)
-            width: 100%
-            max-width: 180px
+            margin-right: calc((100% - 540px)/2)
+        @media (max-width: 767px)
+            margin-right: calc(100% - 360px)
+        @media (max-width: 500px)
+            width: 260px
+            margin-right: auto
+            margin-left: auto
     .know-more
         margin-top: 40px
         max-width: 600px
@@ -748,7 +801,7 @@ ul li
     &__title
         font-family: 'Chalet-1960', Arial, sans-serif
         font-size: 62px
-        line-height: 72px
+        line-height: 75px
         letter-spacing: -0.015em
         max-width: 750px
         @media (max-width: 1439px)
@@ -796,7 +849,7 @@ ul li
         .label
             font-size: 36px
             color: #2d2d2d
-            top: 0
+            top: -8px
             @media (max-width: 767px)
                 font-size: 16px
                 top: 12px
@@ -830,7 +883,7 @@ ul li
             display: inline-block
             color: #ffffff
             font-family: 'Chalet-1960', Arial, sans-serif
-            font-size: 18px
+            font-size: 16px
             letter-spacing: 0.165em
             text-transform: uppercase
             @media (max-width: 1749px)
@@ -854,6 +907,9 @@ ul li
         @media (max-width: 767px)
             width: 100%
             margin-bottom: 40px
+        &:first-child
+            .footer__address
+                max-width: 290px
         &:last-child
             margin-right: 0
         &-link
@@ -862,6 +918,7 @@ ul li
             font-size: 12px
             letter-spacing: 0.03em
             display: block
+            padding-bottom: 5px
     &__address
         font-family: 'Chalet-1960', Arial, sans-serif
         font-size: 18px
@@ -893,16 +950,16 @@ ul li
         display: flex
         flex-wrap: wrap
     &__partner
-        width: calc((100% - 40px)/3)
-        margin-right: 20px
-        margin-bottom: 20px
+        width: calc((100% - 20px)/3)
+        margin-right: 10px
+        margin-bottom: 10px
         background-color: #fff
         padding: 95px 50px
         display: flex
         @media (max-width: 1749px)
             padding: 80px 30px
         @media (max-width: 1439px)
-            width: calc((100% - 20px)/2)
+            width: calc((100% - 10px)/2)
         @media (max-width: 1024px)
             width: 100%
             margin-right: 0
@@ -913,7 +970,7 @@ ul li
         &:nth-child(3n + 3)
             margin-right: 0
             @media (max-width: 1439px)
-                margin-right: 20px
+                margin-right: 10px
             @media (max-width: 1024px)
                 margin-right: 0
         &:nth-child(2n + 2)
@@ -957,6 +1014,8 @@ ul li
         margin-bottom: 10px
         background-color: #fff
         position: relative
+        .articles__date
+            font-size: 24px
         .know-more
             position: absolute
             left: 70px

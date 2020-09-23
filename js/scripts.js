@@ -6,7 +6,9 @@ $(function(){
 
     $('.main-slider').slick({
         arrows: false,
-        dots: false
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 7000
     });
 
     // Замена картинок в круге на главной
@@ -49,28 +51,28 @@ $(function(){
     
                 if ( scroll < parseInt($(window).innerHeight() + 300) ) {
                     $('.about-block__img').css('background-image', 'url(' + aboutPicSrc1 + ')');
-                    $('.about-block__num').text('01');
+                    $('.about-block__num').text('O1');
                     $('.about-block__info').removeClass('about-block__info--active');
                     $('#about-block-1').find('.about-block__info').addClass('about-block__info--active');
                 }
                 
                 if ( scroll > aboutBlock2 ) {
                     $('.about-block__img').css('background-image', 'url(' + aboutPicSrc2 + ')');
-                    $('.about-block__num').text('02');
+                    $('.about-block__num').text('O2');
                     $('.about-block__info').removeClass('about-block__info--active');
                     $('#about-block-2').find('.about-block__info').addClass('about-block__info--active');
                 }
     
                 if ( scroll > aboutBlock3 ) {
                     $('.about-block__img').css('background-image', 'url(' + aboutPicSrc3 + ')');
-                    $('.about-block__num').text('03');
+                    $('.about-block__num').text('O3');
                     $('.about-block__info').removeClass('about-block__info--active');
                     $('#about-block-3').find('.about-block__info').addClass('about-block__info--active');
                 }
     
                 if ( scroll > aboutBlock4 ) {
                     $('.about-block__img').css('background-image', 'url(' + aboutPicSrc4 + ')');
-                    $('.about-block__num').text('04');
+                    $('.about-block__num').text('O4');
                     $('.about-block__info').removeClass('about-block__info--active');
                     $('#about-block-4').find('.about-block__info').addClass('about-block__info--active');
                 }

@@ -294,7 +294,9 @@ input[type="radio"]:checked + label:after
             margin-left: auto
             max-width: 1710px
     &--large
-        max-width: 1860px
+        max-width: 1890px
+        @media (max-width: 1900px)
+            max-width: 1850px
     @media (max-width: 1749px)
         padding: 0 3%
     @media (max-width: 767px)
@@ -376,3 +378,48 @@ input[type="radio"]:checked + label:after
 
 .d-flex
     display: flex
+
+.show-more
+    padding-bottom: 240px
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    &__inner
+        display: flex
+        justify-content: center
+        align-items: center
+        &:hover,
+        &:focus 
+            .show-more__text
+                color: $rose
+                cursor: pointer
+            .show-more__plus
+                &::after,
+                &::before
+                    background-color: $rose
+                    cursor: pointer
+    &__text
+        padding-right: 18px
+    &__plus
+        position: relative
+        width: 15px
+        height: 15px
+        transition: all .5s ease-out
+        &::after,
+        &::before
+            content: ''
+            position: absolute
+            background-color: #000000
+        &::after
+            top: 50%
+            left: 0
+            transform: translateY(-50%)
+            height: 1px
+            width: 15px
+        &::before
+            top: 0
+            left: 50%
+            transform: translateX(-50%)
+            height: 15px
+            width: 1px
