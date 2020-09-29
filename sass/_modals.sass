@@ -1,0 +1,36 @@
+.modal
+    display: none
+    &__title
+        font-family: 'Chalet-1980', Arial, sans-serif
+        font-size: 48px
+        letter-spacing: -0.015em
+        padding-bottom: 40px
+        line-height: 75px
+        text-align: center
+        @media (max-width: 1199px)
+            font-size: 32px
+        @media (max-width: 767px)
+            font-size: 18px
+
+.show-route
+    &__inner
+        display: flex
+        justify-content: space-between
+    .modal-inner
+        padding: 70px 134px 85px
+        @media (max-width: 767px)
+            padding: 0
+    &__link
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-right: 65px
+        &:last-child
+            margin-right: 0
+        &:focus
+            color: #000
+    &__text
+        padding-top: 8px
+        display: inline-block
+        @media (max-width: 767px)
+            text-align: center

@@ -2,6 +2,10 @@ $(function(){
     // Плагин для стилизации селектов
     $('.select-js').selectize();
 
+    // Модалки
+
+    $('.fancy').fancybox();
+
     // Главный слайдер
 
     $('.main-slider').slick({
@@ -81,11 +85,57 @@ $(function(){
     }
 
 
-    if ($(window).innerWidth() > 767) {
-        $('.cols.cols02').mousewheel(function(e, delta) {
-            this.scrollLeft -= (delta * 40);
-            e.preventDefault();
+    // if ($(window).innerWidth() > 767) {
+    //     $('.cols.cols02').mousewheel(function(e, delta) {
+    //         this.scrollLeft -= (delta * 40);
+    //         e.preventDefault();
+    //     });
+    // }
+
+    if ($('.services').length) {
+        var scrollLeft = 0;
+        var serviceBlockWidth = $('#service-1').innerWidth();
+        var scrollLength = serviceBlockWidth * 4;
+        if ($(window).innerWidth() < 1749) {
+            scrollLength = serviceBlockWidth * 5;
+        }
+        if ($(window).innerWidth() < 1024) {
+            scrollLength = serviceBlockWidth * 6;
+        }
+        $('.services__arrow-right').click(function(evt) {
+            evt.preventDefault();
+            if (scrollLeft < scrollLength) {
+                var scrollDistance = scrollLeft + serviceBlockWidth * 2;
+                $('.cols.cols02').animate({
+                    scrollLeft: scrollDistance
+                }, 1000);
+                scrollLeft += serviceBlockWidth * 2;
+                enableServicesArrows(scrollLeft, scrollLength);
+            }
         });
+
+        $('.services__arrow-left').click(function(evt) {
+            evt.preventDefault();
+            var scrollDistance = scrollLeft - serviceBlockWidth * 2;
+            $('.cols.cols02').animate({
+                scrollLeft: scrollDistance
+            }, 1000);
+            scrollLeft -= serviceBlockWidth * 2;
+            enableServicesArrows(scrollLeft, scrollLength);
+        });
+    }
+
+    function enableServicesArrows(scrollLeft, scrollLength) {
+        if (scrollLeft > 0) {
+            $('.services__arrow-left').removeClass('services__arrow--disabled');
+        } else {
+            $('.services__arrow-left').addClass('services__arrow--disabled');
+        }
+        if (scrollLeft < scrollLength) {
+            $('.services__arrow-right').removeClass('services__arrow--disabled');
+        } else {
+            $('.services__arrow-right').addClass('services__arrow--disabled');
+        }
     }
 
     // Слайдер статей на главной
@@ -111,5 +161,51 @@ $(function(){
     }).on('setPosition', function (event, slick) {
         slick.$slides.css('height', slick.$slideTrack.height() + 'px');
     });
+
+    // Скролл на странице новостей
+
+    $(window).scroll(function() {
+        var sc = $(this).scrollTop();
+        if($('.news-detailed').length) {
+
+            var scrollStart = $('.header').innerHeight();
+
+            var scrollBottom = scrollStart + $('.news-detailed__text').innerHeight() - 700;
+        
+            if(sc > scrollStart) {
+                if(sc < scrollBottom) {
+                    $('.news-detailed__commercial').css('bottom', `auto`)
+                    $('.news-detailed__commercial').css('top', `${sc - scrollStart}px`)
+                } else {
+                    $('.news-detailed__commercial').css('top', `auto`)
+                    $('.news-detailed__commercial').css('bottom', `100px`)
+                }
+            } else {
+                $('.news-detailed__commercial').css('top', `0px`)
+                $('.news-detailed__commercial').css('bottom', `auto`)
+            }
+        }
+    });
+
+    // Страница контакты
+
+    if ($('.contacts').length) {
+        $('body').on('click', '.contacts__link', function() {
+            $('.contacts-modal').addClass('contacts-modal--open');
+        });
+
+        $(document).mouseup(function (e){
+            var openedContactsModal = $('.contacts-modal');
+            var openedShowRoutes = $('.fancybox-inner');
+            if (!openedContactsModal.is(e.target) && openedContactsModal.has(e.target).length === 0 &&
+            !openedShowRoutes.is(e.target) && openedShowRoutes.has(e.target).length === 0) { 
+                $('.contacts-modal').removeClass('contacts-modal--open');
+            }
+        });
+
+        $('body').on('click', '.contacts-modal__close', function() {
+            $('.contacts-modal').removeClass('contacts-modal--open');
+        });
+    }
 
 });

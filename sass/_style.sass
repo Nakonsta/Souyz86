@@ -5,7 +5,7 @@
         left: 0
         right: 0
         position: absolute
-        z-index: 2
+        z-index: 20
     &--white
         color: #fff
         .header__nav-link
@@ -151,6 +151,12 @@
                 &:hover,
                 &:focus
                     color: $rose
+        &--white
+            .know-link
+                color: #ffffff
+                &:hover,
+                &:focus
+                    color: #ffffff
         &--flexible
             .line-wrapper
                 width: calc(100% - 150px)
@@ -263,12 +269,12 @@
     height: 900px
     overflow: hidden
     position: relative
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
     @media (max-width: 1199px)
         height: 700px
     @media (max-width: 767px)
         height: auto
     &__num
+        padding-top: 15px
         font-size: 14px
         letter-spacing: -0.015em
         @media (max-width: 767px)
@@ -287,6 +293,31 @@
                 width: 85px
                 height: 1px
                 background-color: #d3d3d3
+    &__arrow-right,
+    &__arrow-left
+        display: inline-block
+        position: absolute
+        top: 50%
+        right: 80px
+        transform: translateY(-50%)
+        width: 56px
+        height: 56px
+        z-index: 15
+        @media (max-width: 767px)
+            display: none
+        &:hover circle,
+        &:focus circle
+            fill: #E45B65
+        &:hover path,
+        &:focus path
+            fill: #fff
+    &__arrow-left
+        right: auto
+        left: 80px
+        transform: translateY(-50%) rotate(180deg)
+    &__arrow--disabled
+        opacity: 0.35
+        filter: grayscale(1)
 
 .services #tr_i 
     position: absolute
@@ -296,7 +327,7 @@
 
 .services .container 
     height: 100%
-
+    max-width: none
 
 .services .rows 
     display: flex
@@ -306,9 +337,11 @@
 
 .services .cols02
     max-width: 100%
-    overflow: auto
+    overflow-y: hidden
+    overflow-x: auto
     width: 100%
     display: block
+    position: relative
     &::-webkit-scrollbar
         display: none
 
@@ -323,6 +356,7 @@
     white-space: nowrap
     font-size: 0
     z-index: 5
+    top: -18px
     @media (max-width: 767px)
         white-space: normal
         width: 100%
@@ -345,6 +379,8 @@ ul li
         margin: 0 auto
         border: none
         border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+    &:first-child
+        border-left: none
 
 .services .rows .cols .show_img li .slk 
     display: block
@@ -356,14 +392,14 @@ ul li
 
 .services .rows .cols .show_img li .txt 
     display: flex
-    align-items: center
+    align-items: flex-start
     justify-content: space-between
-    transform: rotate(-90deg) translateY(-500px)
+    transform: rotate(-90deg) translateY(-580px)
     transform-origin: 100% 100%
     transition: all 0.3s ease 0s
     position: absolute
-    top: 40px
-    width: 650px
+    top: -10px
+    width: 730px
     @media (max-width: 1199px)
         width: 540px
         transform: rotate(-90deg) translateY(-350px)
@@ -375,7 +411,7 @@ ul li
 
 .services .rows .cols .show_img li .slk:hover .txt 
     transition: all 0.3s ease 0s
-    transform: rotate(-90deg) translateY(-530px)
+    transform: rotate(-90deg) translateY(-600px)
     @media (max-width: 1199px)
         transform: rotate(-90deg) translateY(-380px)
     @media (max-width: 767px)
@@ -397,7 +433,6 @@ ul li
         line-height: 1.5
     @media (max-width: 767px)
         font-size: 18px
-
 
 .services .rows .cols .show_img li .txt.txt01 .h3 
     margin: 0
@@ -447,6 +482,13 @@ ul li
     height: 672px
     left: 50%
     transform: translate3d(calc(-9% - 20px), -50%, 0px)
+    // object-fit: contain
+
+.services .rows .cols .show_img li .bim--contain.ifirst01 img 
+    object-fit: contain
+
+.services .rows .cols .show_img li .bim--contain.ilast01 img 
+    object-fit: contain
 
 .services .bim.ifirst01::after 
     content: ""
@@ -455,19 +497,19 @@ ul li
     right: 0px
     bottom: 0px
     left: 0px
-    background-color: #c7515b
+    background-color: #CD505B
     mix-blend-mode: multiply
     opacity: 0
     transition: all 0.3s ease 0s
 
 .service-blue .bim.ifirst01::after 
-    background-color: #515cc7
+    background-color: #F5BF78
 
 .service-green .bim.ifirst01::after 
-    background-color: #51c757
+    background-color: #4962AC
 
 .service-yellow .bim.ifirst01::after 
-    background-color: #c7a751
+    background-color: #C7C7C7
 
 
 .services .rows .cols .show_img li .bim.ifirst01 img 
@@ -664,12 +706,13 @@ ul li
                 height: 300px
 
 .articles
-    background-color: #fff
     padding: 250px 0 340px
     @media (max-width: 1199px)
         padding: 80px 0
     @media (max-width: 767px)
         padding: 45px 0
+    &--white
+        background-color: #fff
     &__item
         max-width: 420px
         position: relative
@@ -875,6 +918,7 @@ ul li
         align-items: center
         @media (max-width: 767px)
             flex-direction: column
+            align-items: flex-start
         &-wrapper
             width: 50%
             @media (max-width: 1365px)
@@ -884,11 +928,13 @@ ul li
             display: inline-block
             color: #ffffff
             font-family: 'Chalet-1960', Arial, sans-serif
-            font-size: 16px
+            font-size: 18px
             letter-spacing: 0.165em
             text-transform: uppercase
             @media (max-width: 1749px)
                 font-size: 14px
+            @media (max-width: 767px)
+                margin-bottom: 12px
     &__contacts
         padding-bottom: 130px
         border-bottom: 1px solid #373737
@@ -1115,6 +1161,262 @@ ul li
             padding-bottom: 175px
             @media (max-width: 767px)
                 max-width: none
+
+.news-detailed
+    padding: 60px 0 0
+    &__inner
+        display: flex
+        position: relative
+        @media (max-width: 1199px)
+            flex-direction: column-reverse
+    &__text
+        width: 65%
+        height: 100%
+        padding-right: 90px
+        @media (max-width: 1439px)
+            width: 55%
+        @media (max-width: 1199px)
+            width: 100%
+            padding-right: 0
+    &__commercial
+        width: 35%
+        position: absolute
+        top: 0
+        right: 10px
+        background-color: $malina
+        color: #ffffff
+        padding: 90px 75px 45px
+        margin-top: 8px
+        @media (max-width: 1439px)
+            width: 45%
+            padding-top: 60px
+        @media (max-width: 1199px)
+            position: static
+            width: 100%
+            margin-bottom: 40px
+        @media (max-width: 575px)
+            padding: 45px 25px
+        &-pic
+            height: 165px
+            background-repeat: no-repeat
+            background-position: 0 50%
+            background-size: contain
+            margin-bottom: 155px
+            @media (max-width: 1439px)
+                margin-bottom: 80px
+        &-title
+            font-family: 'Chalet-1960', Arial, sans-serif
+            font-size: 34px
+            letter-spacing: -0.015em
+            padding-bottom: 125px
+            line-height: 48px
+            @media (max-width: 1439px)
+                font-size: 28px
+                line-height: 1.4
+                padding-bottom: 80px
+            @media (max-width: 575px)
+                font-size: 18px
+    &__know-more
+        max-width: 195px
+        margin-bottom: 120px
+        @media (max-width: 1199px)
+            margin-bottom: 40px
+        @media (max-width: 575px)
+            max-width: none
+        &:hover,
+        &:focus
+            .line-wrapper
+                width: calc(100% - 150px)
+        .line-wrapper
+            margin-right: 20px
+            margin-left: 0
+    &__date
+        opacity: 0.3
+        font-family: 'Chalet-1920', Arial, sans-serif
+        font-size: 24px
+        letter-spacing: -0.015em
+        padding-bottom: 65px
+        @media (max-width: 1199px)
+            padding-bottom: 32px
+        @media (max-width: 575px)
+            font-size: 20px
+    &__title
+        font-family: 'Chalet-1980', Arial, sans-serif
+        font-size: 48px
+        letter-spacing: -0.015em
+        padding-bottom: 50px
+        line-height: 75px
+        max-width: 900px
+        @media (max-width: 1439px)
+            font-size: 34px
+            line-height: 1.4
+        @media (max-width: 575px)
+            font-size: 20px
+    &__articles
+        padding-bottom: 140px
+        @media (max-width: 1439px)
+            padding-top: 120px
+
+.contacts
+    background-color: #c0c0c0
+    text-align: center
+    max-height: 980px
+    overflow: hidden
+    position: relative
+    height: 980px
+    @media (max-width: 1199px)
+        height: 700px
+    @media (max-width: 1024px)
+        height: 600px
+    @media (max-width: 767px)
+        height: auto
+        background-color: #fff
+        max-height: none
+        overflow: auto
+    &__map
+        max-width: 1910px
+        max-height: 980px
+        position: absolute
+        top: 0
+        left: 0
+        @media (max-width: 767px)
+            display: none
+    &__link
+        cursor: pointer
+        transition: all .5s ease-out
+        &:hover,
+        &:focus
+            fill: darken($rose, 20%)
+    &-modal
+        position: fixed
+        top: 0
+        bottom: 0
+        right: -1999px
+        width: 50%
+        background-color: $malina
+        transition: all 1.5s ease-out
+        color: #ffffff
+        @media (max-width: 1024px)
+            width: 75%
+        @media (max-width: 767px)
+            display: none
+        &--open
+            right: 0
+        &__inner
+            display: flex
+            align-items: center
+            padding: 50px 100px 50px 230px
+            height: 100%
+            @media (max-width: 1739px)
+                padding-left: 100px
+        &__content
+            position: relative
+            text-align: left
+        &__close
+            position: absolute
+            top: -10px
+            right: -80px
+            &:hover svg,
+            &:focus svg
+                transform: scale(1.1)
+        &__title
+            font-family: 'Chalet-1980', Arial, sans-serif
+            font-size: 45px
+            letter-spacing: -0.01em
+            padding-bottom: 90px
+            line-height: 60px
+            @media (max-width: 1739px)
+                font-size: 32px
+                padding-bottom: 60px
+                line-height: 1.4
+            @media (max-width: 767px)
+                font-size: 22px
+                line-height: 1.4
+                padding: 32px 0
+        &__address
+            font-weight: 500
+            font-size: 25px
+            line-height: 44px
+            padding-bottom: 60px
+            @media (max-width: 1739px)
+                font-size: 20px
+                padding-bottom: 32px
+                line-height: 1.4
+            @media (max-width: 767px)
+                font-size: 16px
+                line-height: 2
+                padding-bottom: 24px
+        &__hours
+            font-size: 18px
+            line-height: 32px
+            padding-bottom: 45px
+            @media (max-width: 1739px)
+                font-size: 16px
+                padding-bottom: 20px
+                line-height: 1.4
+            @media (max-width: 767px)
+                font-size: 13px
+                line-height: 1.4
+                padding-bottom: 24px
+        &__row
+            display: flex
+            font-size: 18px
+            line-height: 32px
+            padding-bottom: 16px
+            @media (max-width: 1739px)
+                padding-bottom: 12px
+                line-height: 1.4
+            @media (max-width: 767px)
+                font-size: 13px
+                line-height: 1.4
+                padding-bottom: 8px
+            &-name
+                width: 145px
+                @media (max-width: 767px)
+                    width: 115px
+            &-link
+                color: #ffffff
+                @media (max-width: 767px)
+                    color: #000000
+                &:hover,
+                &:focus
+                    color: #ffffff
+                    letter-spacing: 0.05em
+                    @media (max-width: 767px)
+                        color: #000000
+        &__show
+            padding: 74px 0 8px
+            display: inline-block
+            color: #ffffff
+            border-bottom: 1px solid #ffffff
+            font-size: 18px
+            line-height: 32px
+            text-transform: lowercase
+            @media (max-width: 1739px)
+                padding: 45px 0 8px
+            @media (max-width: 767px)
+                font-size: 10px
+                padding: 32px 0 5px
+                color: #000000
+                border-bottom-color: #000
+                margin-bottom: 32px
+                line-height: 1.4
+            &:hover,
+            &:focus
+                color: #ffffff
+                letter-spacing: 0.05em
+                @media (max-width: 767px)
+                    color: #000000
+    &-mobile
+        display: none
+        @media (max-width: 767px)
+            display: block
+            padding-top: 80px
+        &__item
+            text-align: left
+            border-bottom: 1px solid #dddddd
+            &:last-child
+                border-bottom: none
 
             
 
