@@ -1418,6 +1418,238 @@ ul li
             &:last-child
                 border-bottom: none
 
+.services-page
+    height: 100vh
+    @media (max-width: 767px)
+        height: auto
+        padding-top: 100px
+    .rows .cols .show_img li .txt
+        top: 50px
+
+.company-slider
+    padding-bottom: 160px
+    @media (max-width: 767px)
+        padding-bottom: 45px
+    &__line
+        width: 100%
+        margin: 0
+        autotext-align: center
+        overflow: hidden
+    &__img
+        width: auto
+        height: 655px
+        object-fit: cover
+        margin-right: 28px
+        @media (max-width: 1024px)
+            height: 400px
+        @media (max-width: 767px)
+            height: 250px
+    &__inner
+        display: inline-block
+        text-align: center
+        white-space: nowrap
+        font-size: 0
+    .string:hover
+        cursor: pointer
+
+.company-services
+    padding-bottom: 175px
+    @media (max-width: 767px)
+        padding-bottom: 45px
+    &__inner
+        display: flex
+        align-items: flex-end
+        padding-bottom: 75px
+        @media (max-width: 767px)
+            flex-direction: column
+            align-items: flex-start
+    &__block
+        width: 50%
+        @media (max-width: 767px)
+            width: 100%
+    &__info
+        padding-right: 15px
+        @media (max-width: 767px)
+            padding-right: 0
+    &__items
+        font-size: 18px
+        letter-spacing: -0.015em
+        line-height: 2
+        @media (max-width: 767px)
+            margin-top: 32px
+    &__title
+        font-family: 'Chalet-1960', Arial, sans-serif
+        font-size: 34px
+        letter-spacing: -0.015em
+        padding-bottom: 30px
+        line-height: 48px
+        max-width: 700px
+    &__text
+        font-size: 18px
+        letter-spacing: -0.015em
+        max-width: 700px
+    &__span
+        position: relative
+    &__link
+        position: relative
+        color: $rose
+        text-decoration: underline
+        line-height: 1
+        display: inline-block
+    &__img
+        transition: all .5s ease-out
+        width: 244px
+        height: 184px
+        object-fit: cover
+        position: absolute
+        left: 10%
+        bottom: 0
+        transform: translateY(-18%)
+        display: none
+        &.show
+            @media (min-width: 1199px)
+                display: block
+    .know-more
+        max-width: 570px
+
+.company-about
+    .container--left
+        @media (max-width: 1749px)
+            margin-left: 3%
+            max-width: 97%
+            padding: 0
+        @media (max-width: 1023px)
+            margin-left: 0
+            max-width: 100%
+            padding: 0
+        @media (max-width: 767px)
+            padding: 0
+    &__slide
+        background-color: #fff
+        &-inner
+            display: flex
+            @media (max-width: 1023px)
+                flex-direction: column-reverse
+        &-info
+            width: 35%
+            padding: 80px 160px 80px 0
+            @media (max-width: 1439px)
+                padding-right: 80px
+            @media (max-width: 1023px)
+                width: 100%
+                padding: 45px 3%
+            @media (max-width: 767px)
+                padding: 45px 5%
+        &-pic
+            height: 100%
+            background-repeat: no-repeat
+            background-position: 50% 50%
+            background-size: cover
+            &-wrapper
+                width: 65%
+                @media (max-width: 1023px)
+                    width: 100%
+                    height: 450px
+        &-counter
+            &-inner
+                font-size: 14px
+                letter-spacing: -0.015em
+                color: #cccccc
+                display: flex
+                align-items: center
+                margin-bottom: 470px
+                @media (max-width: 1439px)
+                    margin-bottom: 150px
+                @media (max-width: 1023px)
+                    margin-bottom: 45px
+            &-line
+                margin: 0 24px
+                width: 96px
+                height: 1px
+                background-color: #ccc
+            &-num
+                color: #000
+        &-title
+            font-family: 'Chalet-1960', Arial, sans-serif
+            font-size: 24px
+            padding-bottom: 36px
+            line-height: 42px
+        &-text
+            font-size: 18px
+            line-height: 2
+            padding-bottom: 124px
+            @media (max-width: 1439px)
+                padding-bottom: 45px
+    .slick-arrow
+        font-size: 0
+        background-color: transparent
+        border: none
+        position: absolute
+        top: 0
+        bottom: 0
+        height: 95%
+        width: 32.5%
+        z-index: 10
+        @media (max-width: 1023px)
+            width: 57px
+            height: 57px
+            top: 200px
+            bottom: auto
+            background-repeat: no-repeat
+            background-size: contain
+    .slick-prev
+        right: 32.5%
+        cursor: url(../img/arrow-red-left.png), pointer
+        @media (max-width: 1023px)
+            cursor: default
+            background-image: url(../img/arrow-red-left.png)
+            left: 24px
+    .slick-next
+        right: 0
+        cursor: url(../img/arrow-red-right.png), pointer
+        @media (max-width: 1023px)
+            cursor: default
+            background-image: url(../img/arrow-red-right.png)
+            right: 24px
+    .slick-disabled
+        cursor: default
+
+.competence
+    padding: 160px 0 185px
+    @media (max-width: 1024px)
+        padding: 80px 0
+    @media (max-width: 767px)
+        padding: 45px 0
+    &__inner
+        display: flex
+        padding-bottom: 80px
+        @media (max-width: 991px)
+            flex-direction: column
+        @media (max-width: 767px)
+            padding-bottom: 45px
+    &__title
+        font-family: 'Chalet-1960', Arial, sans-serif
+        font-size: 34px
+        letter-spacing: -0.015em
+        padding-bottom: 80px
+        line-height: 48px
+    &__block
+        width: 50%
+        padding-right: 90px
+        font-size: 14px
+        letter-spacing: -0.015em
+        line-height: 32px
+        @media (max-width: 991px)
+            width: 100%
+            padding-right: 0
+        b
+            font-weight: 600
+    .know-more
+        max-width: 600px
+
+
+
+
             
 
 

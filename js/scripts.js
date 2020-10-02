@@ -208,4 +208,69 @@ $(function(){
         });
     }
 
+    // Слайдер картинок на странице О нас
+
+    if($('.company-slider').length) {
+        var marquee = $("#slide_line"); 
+        marquee.wrapInner("<span>");
+        marquee.find("span").addClass('company-slider__inner');
+        marquee.append(marquee.find("span").clone());
+        marquee.wrapInner("<div>");
+        marquee.find("div").css({"display": "flex"});
+        var reset = function() {
+
+                $(this).css("margin-left", "0%");
+                $(this).animate({ "margin-left": "-100%" }, 12000, 'linear', reset);
+          
+        };
+        reset.call(marquee.find("div"));
+    }
+
+    // Ховер на ссылки услуг на странице О нас
+
+    if ($(window).innerWidth() > 1199) {
+        $('.company-services__link').hover(function(){
+            $('.company-services__img').removeClass('show');
+            $(this).closest('.company-services__span').find('.company-services__img').addClass('show');
+        });
+    }
+
+    // Основной слайдер на странице о нас
+
+    if ($('.company-about__slider').length) {
+        var $slider = $('.company-about__slider');
+        var currentSlide;
+        var slidesCount;
+        var sliderCounter = document.createElement('div');
+        sliderCounter.classList.add('slider__counter');
+        
+        var updateSliderCounter = function(slick, currentIndex) {
+            currentSlide = slick.slickCurrentSlide() + 1;
+            slidesCount = slick.slideCount;
+            $(sliderCounter).html('<span class="slider__counter-item">' + currentSlide + '</span>' + slidesCount)
+            $slider.find('.company-about__slide-counter-num').each(function() {
+                $(this).text('O' + currentSlide);
+            });
+            $slider.find('.company-about__slide-counter-common').each(function() {
+                $(this).text('O' + slidesCount);
+            });
+        };
+
+        $slider.on('init', function(event, slick) {
+            updateSliderCounter(slick);
+        });
+
+        $slider.on('afterChange', function(event, slick, currentSlide) {
+            updateSliderCounter(slick, currentSlide);
+            console.log('dsad');
+        });
+
+        $slider.slick({
+            fade: true,
+            infinite: false
+        });
+    }
+
+    // Маски для телефонов
+    $('input[type="tel"]').mask('+7 (000) 000-00-00');
 });
