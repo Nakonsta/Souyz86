@@ -2702,6 +2702,396 @@ ul li {
       .cooperation .know-more {
         margin-top: 80px; } }
 
+.portfolio-detailed {
+  padding-bottom: 157px; }
+  @media (max-width: 1024px) {
+    .portfolio-detailed {
+      padding-bottom: 80px; } }
+  @media (max-width: 767px) {
+    .portfolio-detailed {
+      padding-bottom: 45px; } }
+  .portfolio-detailed .news-detailed__text {
+    width: 52%;
+    padding-right: 115px; }
+    @media (max-width: 1199px) {
+      .portfolio-detailed .news-detailed__text {
+        width: 100%;
+        padding-right: 0; } }
+    .portfolio-detailed .news-detailed__text .typography-p {
+      font-size: 18px;
+      line-height: 2; }
+      @media (max-width: 767px) {
+        .portfolio-detailed .news-detailed__text .typography-p {
+          font-size: 16px;
+          line-height: 1.6; } }
+  .portfolio-detailed .news-detailed__logo {
+    margin-bottom: 36px; }
+  .portfolio-detailed .news-detailed__title {
+    padding-bottom: 20px; }
+  .portfolio-detailed .news-detailed__announce {
+    font-family: "Chalet-1960", Arial, sans-serif;
+    font-size: 34px;
+    line-height: 48px;
+    letter-spacing: -0.015em;
+    padding-bottom: 85px; }
+    @media (max-width: 767px) {
+      .portfolio-detailed .news-detailed__announce {
+        font-size: 16px;
+        line-height: 1.4;
+        padding-bottom: 32px; } }
+  .portfolio-detailed .news-detailed__subtitle {
+    font-size: 14px;
+    letter-spacing: -0.015em;
+    padding-bottom: 30px;
+    color: #7b7b7b; }
+  .portfolio-detailed .news-detailed__steps {
+    padding-top: 36px;
+    margin-bottom: 65px; }
+    .portfolio-detailed .news-detailed__steps-inner {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start; }
+      @media (max-width: 1439px) {
+        .portfolio-detailed .news-detailed__steps-inner {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column; } }
+    .portfolio-detailed .news-detailed__steps-title {
+      font-family: "Chalet-1980", Arial, sans-serif;
+      font-size: 18px;
+      line-height: 2;
+      letter-spacing: -0.015em;
+      padding-right: 150px;
+      -ms-flex-negative: 0;
+          flex-shrink: 0; }
+      @media (max-width: 1439px) {
+        .portfolio-detailed .news-detailed__steps-title {
+          padding-right: 0;
+          margin-bottom: 24px; } }
+    .portfolio-detailed .news-detailed__steps .typography-p {
+      margin-bottom: 16px; }
+      @media (max-width: 767px) {
+        .portfolio-detailed .news-detailed__steps .typography-p {
+          font-size: 16px;
+          line-height: 1.6; } }
+  .portfolio-detailed .news-detailed__commercial {
+    background: transparent;
+    padding: 0;
+    width: 48%; }
+    @media (max-width: 1199px) {
+      .portfolio-detailed .news-detailed__commercial {
+        width: 100%; } }
+    .portfolio-detailed .news-detailed__commercial-pic {
+      width: 100%;
+      height: 815px;
+      margin-bottom: 0;
+      background-size: cover; }
+      @media (max-width: 1199px) {
+        .portfolio-detailed .news-detailed__commercial-pic {
+          height: 400px; } }
+    .portfolio-detailed .news-detailed__commercial-cover {
+      background-color: #fff;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      padding: 130px 30px;
+      margin-bottom: 18px; }
+      @media (max-width: 1199px) {
+        .portfolio-detailed .news-detailed__commercial-cover {
+          padding: 45px; } }
+      .portfolio-detailed .news-detailed__commercial-cover .news-detailed__commercial-pic {
+        width: 632px;
+        height: 556px;
+        background-size: contain;
+        background-position: 50% 50%;
+        margin-bottom: 0; }
+        @media (max-width: 1199px) {
+          .portfolio-detailed .news-detailed__commercial-cover .news-detailed__commercial-pic {
+            height: 350px;
+            width: 100%; } }
+
+.portfolio-slider {
+  padding-bottom: 145px; }
+  @media (max-width: 1024px) {
+    .portfolio-slider {
+      padding-bottom: 80px; } }
+  @media (max-width: 767px) {
+    .portfolio-slider {
+      padding-bottom: 45px; } }
+  .portfolio-slider__title {
+    padding-bottom: 80px;
+    font-family: "Chalet-1980", Arial, sans-serif;
+    font-size: 48px;
+    line-height: 75px;
+    letter-spacing: -0.015em; }
+    @media (max-width: 767px) {
+      .portfolio-slider__title {
+        padding-bottom: 45px;
+        font-size: 18px;
+        line-height: 1.4; } }
+  .portfolio-slider .articles-page__block {
+    width: calc(100% - 10px);
+    margin: 0 5px;
+    height: 100%; }
+
+.service {
+  height: 100vh;
+  position: relative; }
+  @media (max-width: 1199px) {
+    .service {
+      height: auto; } }
+  .service__info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 355px;
+    background-color: #c7515b;
+    color: #ffffff;
+    z-index: 10; }
+    @media (max-width: 1199px) {
+      .service__info {
+        display: none; } }
+    .service__info-text {
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+      position: absolute;
+      bottom: 205px;
+      left: 20px;
+      width: 240px; }
+    .service__info .know-link {
+      font-family: "Chalet-1960", Arial, sans-serif;
+      font-size: 24px;
+      letter-spacing: -0.015em;
+      color: #fff; }
+  .service__inner {
+    height: 100vh;
+    overflow: hidden;
+    overflow-x: auto; }
+    @media (max-width: 1199px) {
+      .service__inner {
+        height: auto;
+        overflow-x: hidden;
+        overflow-y: auto; } }
+    .service__inner::-webkit-scrollbar {
+      width: 0px;
+      background: rgba(255, 255, 255, 0); }
+    .service__inner .know-more {
+      position: absolute;
+      left: 415px;
+      bottom: 70px;
+      width: 480px; }
+      @media (max-width: 1439px) {
+        .service__inner .know-more {
+          bottom: 32px; } }
+      @media (max-width: 1199px) {
+        .service__inner .know-more {
+          position: static;
+          padding: 0 3%;
+          margin-bottom: 80px; } }
+      @media (max-width: 767px) {
+        .service__inner .know-more {
+          padding: 0 5%; } }
+  .service__flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    padding: 0 125px 0 415px; }
+    @media (max-width: 1199px) {
+      .service__flex {
+        display: block;
+        padding: 0 3%; } }
+    @media (max-width: 767px) {
+      .service__flex {
+        padding: 0 5%; } }
+  .service__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 175px 0 120px; }
+    @media (max-width: 1439px) {
+      .service__items {
+        padding-bottom: 80px; } }
+    @media (max-width: 1199px) {
+      .service__items {
+        padding-top: 0;
+        padding-bottom: 32px;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        width: 100%; } }
+    @media (max-width: 1199px) {
+      .service__items-block {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; } }
+    @media (max-width: 767px) {
+      .service__items-block {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; } }
+  .service__item {
+    height: 50%;
+    width: 510px;
+    padding-right: 75px; }
+    @media (max-width: 1199px) {
+      .service__item {
+        width: calc((100% - 10px)/2);
+        margin-right: 10px;
+        height: auto;
+        margin-bottom: 32px; } }
+    @media (max-width: 767px) {
+      .service__item {
+        width: 100%;
+        margin-right: 0;
+        padding-right: 0; } }
+    @media (max-width: 1199px) {
+      .service__item:nth-child(2n +2) {
+        margin-right: 0; } }
+    .service__item-title {
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 32px;
+      padding-bottom: 20px;
+      padding-left: 45px; }
+      @media (max-width: 767px) {
+        .service__item-title {
+          font-size: 18px;
+          line-height: 1.4; } }
+    .service__item-list {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+    .service__item-point {
+      position: relative;
+      padding-left: 45px;
+      font-size: 18px;
+      line-height: 28px; }
+      @media (max-width: 767px) {
+        .service__item-point {
+          font-size: 14px;
+          line-height: 1.4; } }
+      .service__item-point::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 0;
+        height: 1px;
+        width: 22px;
+        background-color: #cf5d66; }
+  .service__title {
+    font-family: "Chalet-1960", Arial, sans-serif;
+    font-size: 45px;
+    line-height: 60px;
+    letter-spacing: -0.01em;
+    padding-bottom: 32px; }
+    @media (max-width: 767px) {
+      .service__title {
+        font-size: 24px;
+        line-height: 1.4; } }
+    .service__title-block {
+      padding: 175px 80px 120px 0;
+      max-width: 425px; }
+      @media (max-width: 1439px) {
+        .service__title-block {
+          padding-bottom: 80px; } }
+      @media (max-width: 1199px) {
+        .service__title-block {
+          padding-bottom: 32px; } }
+      @media (max-width: 767px) {
+        .service__title-block {
+          padding-top: 120px; } }
+  .service__subtitle {
+    font-size: 18px; }
+  .service__result {
+    border-left: 1px solid #dcdcdc;
+    padding: 175px 0 120px 105px; }
+    @media (max-width: 1439px) {
+      .service__result {
+        padding-bottom: 80px; } }
+    @media (max-width: 1199px) {
+      .service__result {
+        padding-left: 0;
+        border-left: none;
+        padding-top: 0; } }
+    .service__result-inner {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      height: 100%; }
+      @media (max-width: 1199px) {
+        .service__result-inner {
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between; } }
+      @media (max-width: 767px) {
+        .service__result-inner {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column; } }
+    .service__result-title {
+      font-family: "Chalet-1960", Arial, sans-serif;
+      font-size: 45px;
+      line-height: 60px;
+      letter-spacing: -0.01em;
+      padding-right: 110px; }
+      @media (max-width: 767px) {
+        .service__result-title {
+          font-size: 24px;
+          line-height: 1.4;
+          margin-bottom: 24px; } }
+    .service__result-blocks {
+      height: 100%; }
+      @media (max-width: 767px) {
+        .service__result-blocks {
+          width: 100%; } }
+    .service__result-block {
+      height: calc((100% - 10px)/2);
+      background-color: #ffffff;
+      width: 510px;
+      padding: 55px 40px; }
+      @media (max-width: 1199px) {
+        .service__result-block {
+          width: auto; } }
+      @media (max-width: 767px) {
+        .service__result-block {
+          height: auto;
+          width: 100%; } }
+      .service__result-block:first-child {
+        margin-bottom: 10px; }
+      .service__result-block-num {
+        font-size: 14px;
+        letter-spacing: -0.015em;
+        padding-bottom: 75px;
+        color: #b2b2b2; }
+        @media (max-width: 1439px) {
+          .service__result-block-num {
+            padding-bottom: 20px; } }
+      .service__result-block-title {
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 32px;
+        padding-bottom: 24px; }
+      .service__result-block-text {
+        font-size: 18px;
+        line-height: 28px; }
+
 .modal {
   display: none; }
   .modal__title {

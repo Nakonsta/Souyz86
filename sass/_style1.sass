@@ -84,3 +84,317 @@
         margin-top: 180px
         @media (max-width: 767px)
             margin-top: 80px
+
+.portfolio-detailed
+    padding-bottom: 157px
+    @media (max-width: 1024px)
+        padding-bottom: 80px
+    @media (max-width: 767px)
+        padding-bottom: 45px
+    .news-detailed        
+        &__text
+            width: 52%
+            padding-right: 115px
+            @media (max-width: 1199px)
+                width: 100%
+                padding-right: 0
+            .typography-p
+                font-size: 18px
+                line-height: 2
+                @media (max-width: 767px)
+                    font-size: 16px
+                    line-height: 1.6
+        &__logo
+            margin-bottom: 36px
+        &__title
+            padding-bottom: 20px
+        &__announce
+            font-family: 'Chalet-1960', Arial, sans-serif
+            font-size: 34px
+            line-height: 48px
+            letter-spacing: -0.015em
+            padding-bottom: 85px
+            @media (max-width: 767px)
+                font-size: 16px
+                line-height: 1.4
+                padding-bottom: 32px
+        &__subtitle
+            font-size: 14px
+            letter-spacing: -0.015em
+            padding-bottom: 30px
+            color: #7b7b7b
+        &__steps
+            padding-top: 36px
+            margin-bottom: 65px
+            &-inner
+                display: flex
+                align-items: flex-start
+                @media (max-width: 1439px)
+                    flex-direction: column
+            &-title
+                font-family: 'Chalet-1980', Arial, sans-serif
+                font-size: 18px
+                line-height: 2
+                letter-spacing: -0.015em
+                padding-right: 150px
+                flex-shrink: 0
+                @media (max-width: 1439px)
+                    padding-right: 0
+                    margin-bottom: 24px
+            .typography-p
+                margin-bottom: 16px
+                @media (max-width: 767px)
+                    font-size: 16px
+                    line-height: 1.6
+        &__commercial
+            background: transparent
+            padding: 0
+            width: 48%
+            @media (max-width: 1199px)
+                width: 100%
+            &-pic
+                width: 100%
+                height: 815px
+                margin-bottom: 0
+                background-size: cover
+                @media (max-width: 1199px)
+                    height: 400px
+            &-cover
+                background-color: #fff
+                display: flex
+                justify-content: center
+                align-items: center
+                padding: 130px 30px
+                margin-bottom: 18px
+                @media (max-width: 1199px)
+                    padding: 45px
+                .news-detailed__commercial-pic
+                    width: 632px
+                    height: 556px
+                    background-size: contain
+                    background-position: 50% 50%
+                    margin-bottom: 0
+                    @media (max-width: 1199px)
+                        height: 350px
+                        width: 100%
+
+.portfolio-slider
+    padding-bottom: 145px
+    @media (max-width: 1024px)
+        padding-bottom: 80px
+    @media (max-width: 767px)
+        padding-bottom: 45px
+    &__title
+        padding-bottom: 80px
+        font-family: 'Chalet-1980', Arial, sans-serif
+        font-size: 48px
+        line-height: 75px
+        letter-spacing: -0.015em
+        @media (max-width: 767px)
+            padding-bottom: 45px
+            font-size: 18px
+            line-height: 1.4
+    .articles-page__block
+        width: calc(100% - 10px)
+        margin: 0 5px
+        height: 100%
+
+.service
+    height: 100vh
+    position: relative
+    @media (max-width: 1199px)
+        height: auto
+    &__info
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        width: 355px
+        background-color: $malina
+        color: #ffffff
+        z-index: 10
+        @media (max-width: 1199px)
+            display: none
+        &-text
+            transform: rotate(-90deg)
+            position: absolute
+            bottom: 205px
+            left: 20px
+            width: 240px
+        .know-link
+            font-family: 'Chalet-1960', Arial, sans-serif
+            font-size: 24px
+            letter-spacing: -0.015em
+            color: #fff
+    &__inner
+        height: 100vh
+        overflow: hidden
+        overflow-x: auto
+        @media (max-width: 1199px)
+            height: auto
+            overflow-x: hidden
+            overflow-y: auto   
+        &::-webkit-scrollbar 
+            width: 0px
+            background: rgba(255, 255, 255, 0.0)    
+        .know-more
+            position: absolute
+            left: 415px
+            bottom: 70px
+            width: 480px 
+            @media (max-width: 1439px)
+                bottom: 32px
+            @media (max-width: 1199px)
+                position: static
+                padding: 0 3%
+                margin-bottom: 80px
+            @media (max-width: 767px)
+                padding: 0 5%
+    &__flex
+        display: flex
+        height: 100%
+        padding: 0 125px 0 415px
+        @media (max-width: 1199px)
+            display: block
+            padding: 0 3%
+        @media (max-width: 767px)
+            padding: 0 5%
+    &__items
+        display: flex
+        padding: 175px 0 120px
+        @media (max-width: 1439px)
+            padding-bottom: 80px
+        @media (max-width: 1199px)
+            padding-top: 0
+            padding-bottom: 32px
+            flex-wrap: wrap
+            width: 100%
+        &-block
+            @media (max-width: 1199px)
+                width: 100%
+                display: flex
+            @media (max-width: 767px)
+                flex-direction: column
+    &__item
+        height: 50%
+        width: 510px
+        padding-right: 75px
+        @media (max-width: 1199px)
+            width: calc((100% - 10px)/2)
+            margin-right: 10px
+            height: auto
+            margin-bottom: 32px
+        @media (max-width: 767px)
+            width: 100%
+            margin-right: 0
+            padding-right: 0
+        &:nth-child(2n +2)
+            @media (max-width: 1199px)
+                margin-right: 0
+        &-title
+            font-weight: 500
+            font-size: 25px
+            line-height: 32px
+            padding-bottom: 20px
+            padding-left: 45px
+            @media (max-width: 767px)
+                font-size: 18px
+                line-height: 1.4
+        &-list
+            margin: 0
+            padding: 0
+            list-style: none
+        &-point
+            position: relative
+            padding-left: 45px
+            font-size: 18px
+            line-height: 28px
+            @media (max-width: 767px)
+                font-size: 14px
+                line-height: 1.4
+            &::before
+                content: ''
+                position: absolute
+                top: 12px
+                left: 0
+                height: 1px
+                width: 22px
+                background-color: $rose
+    &__title
+        font-family: 'Chalet-1960', Arial, sans-serif
+        font-size: 45px
+        line-height: 60px
+        letter-spacing: -0.01em
+        padding-bottom: 32px
+        @media (max-width: 767px)
+            font-size: 24px
+            line-height: 1.4
+        &-block
+            padding: 175px 80px 120px 0
+            max-width: 425px
+            @media (max-width: 1439px)
+                padding-bottom: 80px
+            @media (max-width: 1199px)
+                padding-bottom: 32px
+            @media (max-width: 767px)
+                padding-top: 120px
+    &__subtitle
+        font-size: 18px
+    &__result
+        border-left: 1px solid #dcdcdc
+        padding: 175px 0 120px 105px
+        @media (max-width: 1439px)
+            padding-bottom: 80px
+        @media (max-width: 1199px)
+            padding-left: 0
+            border-left: none
+            padding-top: 0
+        &-inner
+            display: flex
+            align-items: flex-start
+            height: 100%
+            @media (max-width: 1199px)
+                justify-content: space-between
+            @media (max-width: 767px)
+                flex-direction: column
+        &-title
+            font-family: 'Chalet-1960', Arial, sans-serif
+            font-size: 45px
+            line-height: 60px
+            letter-spacing: -0.01em
+            padding-right: 110px
+            @media (max-width: 767px)
+                font-size: 24px
+                line-height: 1.4
+                margin-bottom: 24px
+        &-blocks
+            height: 100%
+            @media (max-width: 767px)
+                width: 100%
+        &-block
+            height: calc((100% - 10px)/2)
+            background-color: #ffffff
+            width: 510px
+            padding: 55px 40px
+            @media (max-width: 1199px)
+                width: auto
+            @media (max-width: 767px)
+                height: auto
+                width: 100%
+            &:first-child
+                margin-bottom: 10px
+            &-num
+                font-size: 14px
+                letter-spacing: -0.015em
+                padding-bottom: 75px
+                color: #b2b2b2
+                @media (max-width: 1439px)
+                    padding-bottom: 20px
+            &-title
+                font-weight: 500
+                font-size: 25px
+                line-height: 32px
+                padding-bottom: 24px
+            &-text
+                font-size: 18px
+                line-height: 28px

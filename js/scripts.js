@@ -166,7 +166,7 @@ $(function(){
 
     $(window).scroll(function() {
         var sc = $(this).scrollTop();
-        if($('.news-detailed').length) {
+        if($('.news-detailed-js').length) {
 
             var scrollStart = $('.header').innerHeight();
 
@@ -273,4 +273,36 @@ $(function(){
 
     // Маски для телефонов
     $('input[type="tel"]').mask('+7 (000) 000-00-00');
+
+    // Слайдер Другие проекты
+
+    $('.portfolio-slider').slick({
+        slidesToShow: 3,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    }).on('setPosition', function (event, slick) {
+        slick.$slides.css('height', slick.$slideTrack.height() + 'px');
+    });
+
+    // Горизонтальный скролл на детальных услуг
+
+    if ($(window).innerWidth() > 1199) {
+        $('.service__inner').mousewheel(function(e, delta) {
+            this.scrollLeft -= (delta * 40);
+            e.preventDefault();
+        });
+    }
 });
