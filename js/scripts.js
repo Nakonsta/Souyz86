@@ -22,11 +22,13 @@ $(function(){
         var aboutBlock2 = $('#about-block-2').offset().top - 100;
         var aboutBlock3 = $('#about-block-3').offset().top - 100;
         var aboutBlock4 = $('#about-block-4').offset().top - 100;
+        var aboutBlock5 = $('#about-block-5').offset().top - 100;
     
         var aboutPicSrc1 = $('#about-block-1').attr('data-pic');
         var aboutPicSrc2 = $('#about-block-2').attr('data-pic');
         var aboutPicSrc3 = $('#about-block-3').attr('data-pic');
         var aboutPicSrc4 = $('#about-block-4').attr('data-pic');
+        var aboutPicSrc5 = $('#about-block-5').attr('data-pic');
     
         var scrollOffset = 300;
     
@@ -79,6 +81,13 @@ $(function(){
                     $('.about-block__num').text('O4');
                     $('.about-block__info').removeClass('about-block__info--active');
                     $('#about-block-4').find('.about-block__info').addClass('about-block__info--active');
+                }
+
+                if ( scroll > aboutBlock5 ) {
+                    $('.about-block__img').css('background-image', 'url(' + aboutPicSrc5 + ')');
+                    $('.about-block__num').text('O5');
+                    $('.about-block__info').removeClass('about-block__info--active');
+                    $('#about-block-5').find('.about-block__info').addClass('about-block__info--active');
                 }
             }
         });    
@@ -215,12 +224,13 @@ $(function(){
         marquee.wrapInner("<span>");
         marquee.find("span").addClass('company-slider__inner');
         marquee.append(marquee.find("span").clone());
+        marquee.append(marquee.find("span").clone());
         marquee.wrapInner("<div>");
         marquee.find("div").css({"display": "flex"});
         var reset = function() {
 
                 $(this).css("margin-left", "0%");
-                $(this).animate({ "margin-left": "-100%" }, 12000, 'linear', reset);
+                $(this).animate({ "margin-left": "-100%" }, 30000, 'linear', reset);
           
         };
         reset.call(marquee.find("div"));
@@ -229,9 +239,28 @@ $(function(){
     // Ховер на ссылки услуг на странице О нас
 
     if ($(window).innerWidth() > 1199) {
-        $('.company-services__link').hover(function(){
+        $('.company-services__link').mouseover(function(){
+            console.log($(window).scrollTop());
             $('.company-services__img').removeClass('show');
             $(this).closest('.company-services__span').find('.company-services__img').addClass('show');
+            var O = this.closest('.company-services__span').querySelector('.company-services__img');
+            var X = O.style.left,
+                Y = O.style.top,
+                mouseX=0,
+                mouseY=0; //надо  объявлять X/Y здесь, т.к они используются за пределами замыкания обработчика
+            window.addEventListener('mousemove', followToMouse);
+
+            function followToMouse() {
+                ev = window.event || ev; //если window.event определен, то это IE<9, поддерживаем 
+                X=ev.pageX;
+                Y=ev.pageY;
+                var p = 'px';
+                O.style.left = X + p;
+                O.style.top = Y - $(window).scrollTop() - 180 + p;
+            }         
+        });
+        $('.company-services__link').mouseout(function(){
+            $('.company-services__img').removeClass('show');
         });
     }
 
@@ -305,4 +334,23 @@ $(function(){
             e.preventDefault();
         });
     }
+
+    // Мобильное главное меню
+
+    $('body').on('click', '.header__burger', function() {
+        $('.dropdown-menu').addClass('dropdown-menu--active');
+        $('.dropdown-menu').removeClass('dropdown-menu--closed');
+        setTimeout(function () {
+            $('.dropdown-menu').css('left', '0');
+        }, 0)
+    });
+
+    $('body').on('click', '.dropdown-menu__close-link', function(evt) {
+        evt.preventDefault();
+        $('.dropdown-menu').addClass('dropdown-menu--closed');
+        setTimeout(function () {
+            $('.dropdown-menu').css('left', '-1300px');
+            $('.dropdown-menu').removeClass('dropdown-menu--active');
+        }, 0)
+    });
 });

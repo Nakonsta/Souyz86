@@ -27,10 +27,13 @@
         @media (max-width: 1749px)
             margin-right: 60px
         @media (max-width: 767px)
-            width: 119px
-            height: 55px
-            object-fit: contain
             margin-right: 20px
+        &-svg
+            width: 178px
+            height: 83px
+            @media (max-width: 767px)
+                width: 119px
+                height: 55px
     &__nav
         @media (max-width: 1199px)
             display: none
@@ -211,7 +214,7 @@
                 color: #000000
             &-wrapper
                 display: flex
-                justify-content: center
+                justify-content: flex-start
                 align-items: center
                 position: relative
                 z-index: 110
@@ -486,9 +489,11 @@ ul li
 
 .services .rows .cols .show_img li .bim--contain.ifirst01 img 
     object-fit: contain
+    object-position: 50% 100%
 
 .services .rows .cols .show_img li .bim--contain.ilast01 img 
     object-fit: contain
+    object-position: 50% 100%
 
 .services .bim.ifirst01::after 
     content: ""
@@ -887,7 +892,7 @@ ul li
         .form__row
             margin-bottom: 0
             flex: 1
-            margin-right: 85px
+            margin-right: 50px
             @media (max-width: 767px)
                 margin-right: 0
         .label
@@ -928,7 +933,7 @@ ul li
             display: inline-block
             color: #ffffff
             font-family: 'Chalet-1960', Arial, sans-serif
-            font-size: 18px
+            font-size: 13px
             letter-spacing: 0.165em
             text-transform: uppercase
             @media (max-width: 1749px)
@@ -980,7 +985,7 @@ ul li
         align-items: center
         color: #2d2d2d
         font-family: 'Chalet-1960', Arial, sans-serif
-        font-size: 14px
+        font-size: 10px
         letter-spacing: 0.165em
         text-transform: uppercase
         @media (max-width: 767px)
@@ -1092,11 +1097,14 @@ ul li
         &--commercial
             background-color: $rose
             color: #ffffff
-            padding: 450px 70px 10px
+            padding: 390px 70px 10px
             @media (max-width: 767px)
                 padding: 100px 20px 150px
             .know-link
                 color: #ffffff
+            .articles-page__block-title
+                @media (max-width: 1439px)
+                    font-size: 28px
         &-title
             font-family: 'Chalet-1960', Arial, sans-serif
             font-size: 34px
@@ -1183,19 +1191,19 @@ ul li
         position: absolute
         top: 0
         right: 10px
-        background-color: $malina
+        // background-color: $malina
         color: #ffffff
-        padding: 90px 75px 45px
+        // padding: 90px 75px 45px
         margin-top: 8px
         @media (max-width: 1439px)
             width: 45%
-            padding-top: 60px
+            // padding-top: 60px
         @media (max-width: 1199px)
             position: static
             width: 100%
             margin-bottom: 40px
         @media (max-width: 575px)
-            padding: 45px 25px
+            // padding: 45px 25px
         &-pic
             height: 165px
             background-repeat: no-repeat
@@ -1216,6 +1224,13 @@ ul li
                 padding-bottom: 80px
             @media (max-width: 575px)
                 font-size: 18px
+    &__pic
+        height: 600px
+        background-repeat: no-repeat
+        background-position: 0 50%
+        background-size: cover
+        @media (max-width: 767px)
+            height: 350px
     &__know-more
         max-width: 195px
         margin-bottom: 120px
@@ -1501,9 +1516,9 @@ ul li
         width: 244px
         height: 184px
         object-fit: cover
-        position: absolute
-        left: 10%
-        bottom: 0
+        position: fixed
+        right: 10%
+        top: 30%
         transform: translateY(-18%)
         display: none
         &.show
